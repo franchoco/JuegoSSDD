@@ -90,9 +90,7 @@ public class Game implements KeyListener{
                     }
 
                     //update players
-                    //tablero.p1.posY += vy*DX;
                     tablero.p1.update(DX);
-                    //tablero.p2.posY += vy*DX;
                     tablero.p2.update(DX);
 
                     //update barras
@@ -102,6 +100,11 @@ public class Game implements KeyListener{
                         if(tablero.p1.bottom()<= barra.top() && tablero.p1.bottom()>= barra.bottom()) {
                             tablero.p1.speed = 0.01;
                             tablero.p1.standUp = true;
+                        }
+
+                        if(tablero.p2.bottom()<= barra.top() && tablero.p2.bottom()>= barra.bottom()) {
+                            tablero.p2.speed = 0.01;
+                            tablero.p2.standUp = true;
                         }
 
                     }

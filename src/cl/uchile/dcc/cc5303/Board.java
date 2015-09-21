@@ -12,7 +12,7 @@ public class Board extends Canvas {
     public int width, height;
 
     public Player p1, p2;
-    public List<Bench> bases = new ArrayList<Bench>();
+    public Bench[] bases;
     public Image img;
     public Graphics buffer;
 
@@ -49,10 +49,12 @@ public class Board extends Canvas {
 
     @Override
     public String toString(){
-        String ret = "Tablero: dimensions "+this.width+"x"+this.height+"\n";
+        String ret = "Tablero: dimensions " + this.width + "x" + this.height + "\n";
         ret += p1.toString() + "\n" + p2.toString();
         return ret;
     }
+
+
 
 
 }

@@ -3,6 +3,8 @@ package cl.uchile.dcc.cc5303;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -24,6 +26,24 @@ public class MainThread extends Thread {
 
     int frames = new Random().nextInt(2 * framesToNewBench);
 
+    private Bench[] benches = {
+            new Bench(0, 800, 0),
+            new Bench(100, 200, 1),
+            new Bench(400, 200, 1),
+            new Bench(300, 100, 2),
+            new Bench(600, 200, 2),
+            new Bench(150, 200, 3),
+            new Bench(700, 100, 3),
+            new Bench(75, 200, 4),
+            new Bench(350, 350, 4),
+            new Bench(200, 200, 5),
+            new Bench(400, 400, 6),
+            new Bench(200, 400, 7),
+            new Bench(150, 200, 8),
+            new Bench(75, 100, 9),
+            new Bench(50, 100, 10)
+    };
+
     public MainThread() {
         keys = new boolean[KeyEvent.KEY_LAST];
 
@@ -41,8 +61,7 @@ public class MainThread extends Thread {
         tablero = new Board(WIDTH, HEIGHT);
         tablero.p1 = player1;
         tablero.p2 = player2;
-        Bench piso = new Bench(WIDTH, HEIGHT, true);
-        tablero.bases.add(piso);
+        tablero.bases = benches;
 
         frame.add(tablero);
         tablero.setSize(WIDTH, HEIGHT);
@@ -68,13 +87,6 @@ public class MainThread extends Thread {
     @Override
     public void run() {
         while (true) { // Main loop
-            frames++;
-            if (frames >= framesToNewBench) {
-                Bench barra = new Bench(WIDTH, HEIGHT);
-                tablero.bases.add(barra);
-                frames = new Random().nextInt(framesToNewBench);
-            }
-
             //Check controls
             if (keys[KeyEvent.VK_UP]) {
                 tablero.p1.jump();
@@ -102,7 +114,6 @@ public class MainThread extends Thread {
 
             //update barras
             for (Bench barra : tablero.bases) {
-                barra.posY += barra.speed * DX;
 
                 if (tablero.p1.bottom() <= barra.top() && tablero.p1.bottom() >= barra.bottom()) {
                     tablero.p1.speed = 0.01;

@@ -48,8 +48,8 @@ public class MainThread extends Thread {
         keys = new boolean[KeyEvent.KEY_LAST];
 
         //Jugadores
-        player1 = new Player(WIDTH/3, 2);
-        player2 = new Player(2*WIDTH/3, 1);
+        player1 = new Player(WIDTH/3, 550);
+        player2 = new Player(2*WIDTH/3, 550);
 
         //resumen
         System.out.println(tablero);

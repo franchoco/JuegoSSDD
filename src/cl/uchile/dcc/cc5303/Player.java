@@ -18,7 +18,7 @@ public class Player {
 
     public void jump(){
         if(this.standUp)
-            this.speed = -0.6;
+            this.speed = -0.9;
         this.standUp = false;
     }
 

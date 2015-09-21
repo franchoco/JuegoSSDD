@@ -33,6 +33,7 @@ public class Player {
     public void update(int dx){
         this.posY += this.speed*dx;
         this.speed += this.speed < 0.8 ? 0.02: 0;
+        this.standUp = (this.speed == 0);
     }
 
     public void draw(Graphics g){

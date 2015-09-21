@@ -46,5 +46,9 @@ public class Bench {
         this.posY = 600 - level*100 - this.h;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
 
 }

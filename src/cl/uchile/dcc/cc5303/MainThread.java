@@ -118,7 +118,7 @@ public class MainThread extends Thread {
                 if (tablero.p1.collide(barra)) {
                     tablero.p1.speed = 0.01;
                     tablero.p1.standUp = true;
-                    if (barra.getLevel() > 0){
+                    if (barra.getLevel() > 2){
                         levelsDown = true;
                     }
                 }
@@ -126,7 +126,7 @@ public class MainThread extends Thread {
                 if (tablero.p2.collide(barra)) {
                     tablero.p2.speed = 0.01;
                     tablero.p2.standUp = true;
-                    if (barra.getLevel() > 0){
+                    if (barra.getLevel() > 2){
                         levelsDown = true;
                     }
                 }

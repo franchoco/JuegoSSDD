@@ -125,6 +125,7 @@ public class MainThread extends Thread {
                 }
             }
 
+            // Update board
             if (keys[KeyEvent.VK_SPACE]) {
                 tablero.levelsDown();
             }

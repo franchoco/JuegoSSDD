@@ -49,6 +49,10 @@ public class Player {
         return Math.abs(bottom() - b.top()) < 5 && right() <= b.right() && left() >= b.left();
     }
 
+    public boolean hit(Bench b){
+        return Math.abs(top() - b.bottom()) < 5 && right() <= b.right() && left() >= b.left();
+    }
+
     public int top() {
         return this.posY;
     }

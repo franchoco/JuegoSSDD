@@ -1,4 +1,4 @@
-package com.company;
+package cl.uchile.dcc.cc5303;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -80,20 +80,20 @@ public class MainThread extends Thread {
                 tablero.p1.jump();
             }
             if (keys[KeyEvent.VK_RIGHT]) {
-                tablero.p1.posX += 2;
+                tablero.p1.moveRight();
             }
             if (keys[KeyEvent.VK_LEFT]) {
-                tablero.p1.posX -= 2;
+                tablero.p1.moveLeft();
             }
 
             if (keys[KeyEvent.VK_W]) {
                 tablero.p2.jump();
             }
             if (keys[KeyEvent.VK_D]) {
-                tablero.p2.posX += 2;
+                tablero.p2.moveRight();
             }
             if (keys[KeyEvent.VK_A]) {
-                tablero.p2.posX -= 2;
+                tablero.p2.moveLeft();
             }
 
             //update players

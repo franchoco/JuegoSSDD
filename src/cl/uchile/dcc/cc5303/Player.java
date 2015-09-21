@@ -1,4 +1,4 @@
-package com.company;
+package cl.uchile.dcc.cc5303;
 
 import java.awt.*;
 
@@ -20,6 +20,14 @@ public class Player {
         if(this.standUp)
             this.speed = -0.6;
         this.standUp = false;
+    }
+
+    public void moveRight() {
+        this.posX += 2;
+    }
+
+    public void moveLeft() {
+        this.posX -= 2;
     }
 
     public void update(int dx){

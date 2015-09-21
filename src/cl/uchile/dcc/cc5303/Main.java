@@ -1,4 +1,4 @@
-package com.company;
+package cl.uchile.dcc.cc5303;
 
 public class Main {
 

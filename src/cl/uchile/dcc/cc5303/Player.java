@@ -44,6 +44,10 @@ public class Player {
         return "player: position ("+this.posX+","+this.posY+")";
     }
 
+    public boolean collide(Bench b){
+        return Math.abs(bottom() - b.top()) < 5 && right() <= b.right() && left() >= b.left();
+    }
+
     public int top() {
         return this.posY;
     }

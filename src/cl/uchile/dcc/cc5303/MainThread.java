@@ -114,12 +114,12 @@ public class MainThread extends Thread {
 
             //update barras
             for (Bench barra : tablero.bases) {
-                if (tablero.p1.bottom() <= barra.top() && tablero.p1.bottom() >= barra.bottom()) {
+                if (tablero.p1.collide(barra)) {
                     tablero.p1.speed = 0.01;
                     tablero.p1.standUp = true;
                 }
 
-                if (tablero.p2.bottom() <= barra.top() && tablero.p2.bottom() >= barra.bottom()) {
+                if (tablero.p2.collide(barra)) {
                     tablero.p2.speed = 0.01;
                     tablero.p2.standUp = true;
                 }

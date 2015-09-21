@@ -44,7 +44,7 @@ public class Board extends Canvas {
             base.draw(buffer);
         }
 
-        g.drawImage(img,0,0,null);
+        g.drawImage(img, 0, 0, null);
     }
 
     @Override
@@ -52,6 +52,16 @@ public class Board extends Canvas {
         String ret = "Tablero: dimensions " + this.width + "x" + this.height + "\n";
         ret += p1.toString() + "\n" + p2.toString();
         return ret;
+    }
+
+    public void setBenches(Bench[] benches) {
+        this.bases = benches;
+    }
+
+    public void levelsDown() {
+        for(Bench base: bases) {
+            base.levelDown();
+        }
     }
 
 

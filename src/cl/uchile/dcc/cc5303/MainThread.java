@@ -125,10 +125,9 @@ public class MainThread extends Thread {
                 }
             }
 
-            for (Bench barra: tablero.bases) {
-                if (keys[KeyEvent.VK_SPACE]) {
-                    barra.levelDown();
-                }
+            // Update board
+            if (keys[KeyEvent.VK_SPACE]) {
+                tablero.levelsDown();
             }
 
             tablero.repaint();

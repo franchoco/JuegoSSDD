@@ -114,7 +114,6 @@ public class MainThread extends Thread {
 
             //update barras
             for (Bench barra : tablero.bases) {
-
                 if (tablero.p1.bottom() <= barra.top() && tablero.p1.bottom() >= barra.bottom()) {
                     tablero.p1.speed = 0.01;
                     tablero.p1.standUp = true;
@@ -124,7 +123,12 @@ public class MainThread extends Thread {
                     tablero.p2.speed = 0.01;
                     tablero.p2.standUp = true;
                 }
+            }
 
+            for (Bench barra: tablero.bases) {
+                if (keys[KeyEvent.VK_SPACE]) {
+                    barra.levelDown();
+                }
             }
 
             tablero.repaint();

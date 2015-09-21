@@ -45,18 +45,18 @@ public class Player {
     }
 
     public int top() {
-        return (int) (this.posY + this.h * 0.5);
+        return this.posY;
     }
 
     public int left() {
-        return (int) (this.posX - this.w * 0.5);
+        return this.posX;
     }
 
     public int bottom() {
-        return (int) (this.posY - this.h * 0.5);
+        return this.posY + this.h;
     }
 
     public int right() {
-        return (int) (this.posX + this.w * 0.5);
+        return this.posX + this.w;
     }
 }

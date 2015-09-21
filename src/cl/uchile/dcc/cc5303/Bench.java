@@ -10,12 +10,14 @@ import java.util.Random;
 public class Bench {
     int posX, posY;
     int w, h;
+    int level;
 
-    public Bench(int posX, int width, int level){
+    public Bench(int x, int width, int level){
         this.w = width;
         this.h = 20;
-        this.posX = posX;
-        // level va desde 0 hasta 9 por vista, si es -1 o 10 sale de la vista
+        this.posX = x;
+        // level va desde 0 hasta 5 por vista, si es -1 o 6 sale de la vista.
+        this.level = level;
         this.posY = 600 - level*100 - this.h;
     }
 
@@ -38,4 +40,11 @@ public class Bench {
     public int right() {
         return this.posX + this.w;
     }
+
+    public void levelDown() {
+        this.level--;
+        this.posY = 600 - level*100 - this.h;
+    }
+
+
 }

@@ -1,4 +1,4 @@
-package com.company;
+package cl.uchile.dcc.cc5303;
 
 import java.awt.*;
 import java.util.Random;
@@ -7,7 +7,6 @@ import java.util.Random;
  * Created by sebablasko on 9/11/15.
  */
 public class Bench {
-
     int posX, posY;
     int w = 20, h = 10, maxW = 200, maxH = 20;
     double speed;

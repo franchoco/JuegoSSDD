@@ -1,4 +1,4 @@
-package com.company;
+package cl.uchile.dcc.cc5303;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by sebablasko on 9/11/15.
  */
-public class Board extends Canvas{
+public class Board extends Canvas {
 
     public int width, height;
 
@@ -24,6 +24,7 @@ public class Board extends Canvas{
     @Override
     public void update(Graphics g) { paint(g); }
 
+    @Override
     public void paint(Graphics g){
         if(buffer==null){
             img = createImage(getWidth(),getHeight() );

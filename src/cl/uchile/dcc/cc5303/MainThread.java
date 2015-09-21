@@ -115,7 +115,9 @@ public class MainThread extends Thread {
             //update barras
             boolean levelsDown = false;
             for (Bench barra : tablero.bases) {
-                if (tablero.p1.collide(barra)) {
+                if (tablero.p1.hit(barra))
+                    tablero.p1.speed = 0.8;
+                else if (tablero.p1.collide(barra)) {
                     tablero.p1.speed = 0.01;
                     tablero.p1.standUp = true;
                     if (barra.getLevel() > 2){
@@ -123,7 +125,9 @@ public class MainThread extends Thread {
                     }
                 }
 
-                if (tablero.p2.collide(barra)) {
+                if (tablero.p2.hit(barra))
+                    tablero.p2.speed = 0.8;
+                else if (tablero.p2.collide(barra)) {
                     tablero.p2.speed = 0.01;
                     tablero.p2.standUp = true;
                     if (barra.getLevel() > 2){
